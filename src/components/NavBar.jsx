@@ -11,12 +11,10 @@ export default function NavBar() {
       <AppBar position="static" sx={{ backgroundColor: "#071522 " }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Button variant="contained" sx={{ backgroundColor: "#1C2833  " }}>
-              Contained
-            </Button>
-            <Button variant="contained" sx={{ backgroundColor: "#1C2833  " }}>
-              Contained
-            </Button>
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider">Delivery</span>
+            </label>
           </Typography>
         </Toolbar>
       </AppBar>

@@ -7,9 +7,12 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../contexts/CartContextProvider";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
+  // const { addProductToCart, checkProductInCart } = useCart();
+  const { addProductToCart } = useCart();
 
   const navigate = useNavigate();
 
@@ -39,6 +42,9 @@ export default function ProductCard({ item }) {
 
         <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
           EDIT
+        </Button>
+        <Button size="small" onClick={() => addProductToCart(item)}>
+          Cart
         </Button>
 
         <Button size="small" onClick={() => navigate(`/products/${item.id}`)}>
