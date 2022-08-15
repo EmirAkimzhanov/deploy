@@ -1,9 +1,14 @@
 import NavBar from "./components/NavBar";
+import ProductContextProvider from "./contexts/ProductContextProvider";
+import MainRoutes from "./MainRoutes"
 
 function App() {
   return (
     <>
-      <NavBar />
+      <ProductContextProvider>
+        <NavBar />
+        <MainRoutes />
+      </ProductContextProvider>
     </>
   );
 }
