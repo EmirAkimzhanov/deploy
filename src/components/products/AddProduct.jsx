@@ -53,6 +53,7 @@ const AddProduct = () => {
       <TextField
         id="standard-basic"
         label="Price"
+        type="number"
         variant="standard"
         fullWidth
         name="price"
