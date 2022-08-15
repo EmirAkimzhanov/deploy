@@ -1,4 +1,3 @@
-import Cart from "./components/Cart";
 import NavBar from "./components/NavBar";
 import CartContextProvider from "./contexts/CartContextProvider";
 import ProductContextProvider from "./contexts/ProductContextProvider";
