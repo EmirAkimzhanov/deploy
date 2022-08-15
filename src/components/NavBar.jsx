@@ -13,8 +13,7 @@ export default function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <label className="switch">
               <input type="checkbox" />
-
-              <span className="slider">emir</span>
+              <span className="slider">Delivery</span>
             </label>
           </Typography>
         </Toolbar>

@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "title": "Name",
+      "description": "descr",
+      "price": 123,
+      "image": "ss",
+      "category": "clothing",
+      "id": 1
+    },
+    {
+      "title": "Name",
+      "description": "descr",
+      "price": 123,
+      "image": "ss",
+      "category": "clothing",
+      "id": 2
+    },
+    {
+      "title": "Name",
+      "description": "descrwww",
+      "price": 123,
+      "image": "ss",
+      "category": "clothing",
+      "id": 3
+    },
+    {
+      "title": "Name",
+      "description": "descr",
+      "price": 123,
+      "image": "ss",
+      "category": "clothing",
+      "id": 4
+    }
+  ]
+}
