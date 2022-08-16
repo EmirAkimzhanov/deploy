@@ -5,6 +5,12 @@
       "password": "$2a$10$gFwh40gxPlxCFRbikEfvAOWnsU2UUiOpcsc1JDCLtcKLTba6PhMoC",
       "admin": true,
       "id": 2
+    },
+    {
+      "email": "ass@ass",
+      "password": "$2a$10$xb3pMtQD6wMyNvXL5un4VuyQBoGOYuGumO/9MzNCs3r2jXE7ohT5e",
+      "admin": false,
+      "id": 3
     }
   ],
   "products": [
