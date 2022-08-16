@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "email": "sultan@gmail.com",
+      "password": "$2a$10$gFwh40gxPlxCFRbikEfvAOWnsU2UUiOpcsc1JDCLtcKLTba6PhMoC",
+      "admin": true,
+      "id": 2
+    }
+  ],
   "products": [
     {
       "title": "Name",
