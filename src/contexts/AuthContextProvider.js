@@ -29,8 +29,8 @@ const AuthContextProvider = ({ children }) => {
       console.log(res);
       navigate("/login");
     } catch (error) {
-      console.log(error);
-      setError("Error occured:");
+      console.log(error.data);
+      setError("Error: ", error.message);
     }
   };
 
@@ -42,41 +42,14 @@ const AuthContextProvider = ({ children }) => {
 
     try {
       let res = await axios.post(`${API}/login`, data, config);
-      console.log(res)
       navigate("/");
-      localStorage.setItem("token", JSON.stringify(res.accessToken));
+      localStorage.setItem("token", JSON.stringify(res.data.accessToken));
       localStorage.setItem("email", email);
     } catch (error) {
       console.log(error);
-      setError("Error occured:", error);
+      setError("Error: ", error);
     }
   };
-
-  // async function checkAuth() {
-  //   let token = JSON.parse(localStorage.getItem("token"));
-
-  //   try {
-  //     const Authorization = `Bearer ${token.access}`;
-
-  //     let res = await axios.post(
-  //       `${API}api/token/refresh/`,
-  //       {
-  //         refresh: token.refresh,
-  //       },
-  //       { headers: { Authorization } }
-  //     );
-
-  //     localStorage.setItem(
-  //       "token",
-  //       JSON.stringify({ refresh: token.refresh, access: res.data.access })
-  //     );
-
-  //     let username = localStorage.getItem("username");
-  //     setUser(username);
-  //   } catch (error) {
-  //     logout();
-  //   }
-  // }
 
   function logout() {
     localStorage.removeItem("token");
