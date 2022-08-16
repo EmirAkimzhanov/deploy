@@ -6,7 +6,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 1
+      "id": 1,
+      "name": "fdasfdsafdsa",
+      "picture": "fdsafdasf",
+      "type": "afdsafdsafas"
     },
     {
       "title": "Name",
@@ -14,7 +17,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 2
+      "id": 2,
+      "name": "minato",
+      "picture": "https://tse3.mm.bing.net/th?id=OIP.cFZTykoXMssbjtKWURFeIQHaE7&pid=Api&P=0",
+      "type": "car car"
     },
     {
       "title": "Name",
@@ -22,7 +28,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 3
+      "id": 3,
+      "name": "fdsagdfnmgbcvbb",
+      "picture": "vcxzb nb",
+      "type": ",.nmm,nbvcnvbc"
     },
     {
       "title": "Name",
@@ -30,7 +39,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 4
+      "id": 4,
+      "picture": "hghmj,.k/,mbnvcx",
+      "type": "fghloiu,kjk",
+      "name": "fdsabzc "
     }
   ]
 }
