@@ -5,10 +5,13 @@ import {
   Box,
   Radio,
   RadioGroup,
+  Button,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../contexts/ProductContextProvider";
+import Popper from "@mui/material/Popper";
+import Fade from "@mui/material/Fade";
 
 const Category = () => {
   const { getProducts, fetchByParams } = useProducts();
@@ -25,42 +28,61 @@ const Category = () => {
   useEffect(() => {
     getProducts();
   }, [searchParams]);
+  const [open, setOpen] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    setOpen((previousOpen) => !previousOpen);
+  };
+
+  const canBeOpen = open && Boolean(anchorEl);
+  const id = canBeOpen ? "transition-popper" : undefined;
 
   return (
-    <Box sx={{ display: "flex", p: 5 }}>
-      <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label" sx={{mb: 4}}>Categories</FormLabel>
-        <RadioGroup
-          aria-labelledby="demo-radio-buttons-group-label"
-          defaultValue="all"
-          name="radio-buttons-group"
-          onChange={(e) => fetchByParams("category", e.target.value)}
-        >
-          <Box sx={{display: 'flex', justifyContent: 'space-between', width: '90vw'}}>
-            <Box>
-              <FormControlLabel value="all" control={<Radio />} label="All" />
-            </Box>
-            <Box>
-              <FormControlLabel
+    <div>
+      <button aria-describedby={id} type="button" onClick={handleClick}>
+        Toggle Popper
+      </button>
+      <Popper id={id} open={open} anchorEl={anchorEl} transition>
+        {({ TransitionProps }) => (
+          <Fade {...TransitionProps} timeout={350}>
+            <Box
+              defaultValue="all"
+              sx={{
+                border: 1,
+                p: 1,
+                bgcolor: "background.paper",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Button
+                value="all"
+                onClick={(e) => fetchByParams("category", e.target.value)}
+              >
+                ALL
+              </Button>
+              <Button
+                value="sport"
+                onClick={(e) => fetchByParams("category", e.target.value)}
+              >
+                sport
+              </Button>
+              <Button
                 value="clothes"
-                control={<Radio />}
-                label="Clothes"
-              />
+                onClick={(e) => {
+                  fetchByParams("category", e.target.value);
+                  handleClick();
+                }}
+              >
+                clothes
+              </Button>
             </Box>
-            <Box>
-              <FormControlLabel value="sport" control={<Radio />} label="Sport" />
-            </Box>
-            <Box>
-              <FormControlLabel
-                value="office"
-                control={<Radio />}
-                label="Office"
-              />
-            </Box>
-          </Box>
-        </RadioGroup>
-      </FormControl>
-    </Box>
+          </Fade>
+        )}
+      </Popper>
+    </div>
   );
 };
 
