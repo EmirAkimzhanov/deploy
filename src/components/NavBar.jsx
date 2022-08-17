@@ -27,7 +27,7 @@ export default function NavBar() {
     transition: "100ms",
   };
 
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -68,7 +68,7 @@ export default function NavBar() {
               About us
             </Link>
             {
-              JSON.parse(localStorage.getItem("user")).admin ? (
+              user.admin ? (
               <>
                 <Link to="/admin" style={linkStyle}>
                   Admin

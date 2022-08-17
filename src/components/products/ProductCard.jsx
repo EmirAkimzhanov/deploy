@@ -8,13 +8,15 @@ import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
-  // const { addProductToCart, checkProductInCart } = useCart();
   const { addProductToCart } = useCart();
+  const { user } = useAuth();
 
   const navigate = useNavigate();
+
 
   return (
     <Card sx={{ width: 300, m: 3 }}>
@@ -37,7 +39,7 @@ export default function ProductCard({ item }) {
       </CardContent>
       <CardActions>
         {
-          JSON.parse(localStorage.getItem("user")).admin ? (
+          user.admin ? (
           <>
             <Button size="small" onClick={() => deleteProduct(item.id)}>
               DELETE

@@ -8,7 +8,7 @@ export const useAuth = () => useContext(authContext);
 const API = "http://localhost:8000";
 
 const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({});
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -44,6 +44,7 @@ const AuthContextProvider = ({ children }) => {
       navigate("/");
       localStorage.setItem("token", JSON.stringify(res.data.accessToken));
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      setUser(res.data.user)
     } catch (error) {
       setError(`${error.response.data}`);
     }
@@ -52,7 +53,7 @@ const AuthContextProvider = ({ children }) => {
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    setUser("");
+    setUser({});
   }
 
   function admin() {
