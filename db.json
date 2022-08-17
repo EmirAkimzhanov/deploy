@@ -11,12 +11,14 @@
       "password": "$2a$10$xb3pMtQD6wMyNvXL5un4VuyQBoGOYuGumO/9MzNCs3r2jXE7ohT5e",
       "admin": false,
       "id": 3
+
     },
     {
       "email": "emir.akimzhanov@gmail.com",
       "password": "$2a$10$.4.emN8PNZTzSjocGoCDnOfPinHhs5gt916wwNTioNqHrRpET.lkK",
       "admin": false,
       "id": 4
+
     }
   ],
   "products": [
