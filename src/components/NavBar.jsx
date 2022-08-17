@@ -2,7 +2,6 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { Link } from "react-router-dom";
 import { createTheme, IconButton } from "@mui/material";
@@ -28,7 +27,7 @@ export default function NavBar() {
     transition: "100ms",
   };
 
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -68,12 +67,22 @@ export default function NavBar() {
             <Link to="/about" style={linkStyle}>
               About us
             </Link>
+            {
+              user.admin ? (
+              <>
+                <Link to="/admin" style={linkStyle}>
+                  Admin
+                </Link>
+              </>
+              ):
+              (<></>)
+            }
           </Box>
           <Box className="navlinks">
-            {localStorage.getItem("email") ? (
+            {localStorage.getItem("user") ? (
               <>
                 <Link to="/" style={linkStyle}>
-                  {localStorage.getItem("email")}
+                  {JSON.parse(localStorage.getItem("user")).email}
                 </Link>
                 <Link to="/" style={linkStyle} onClick={logout}>
                   Logout

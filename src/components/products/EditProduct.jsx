@@ -41,17 +41,17 @@ const EditProduct = () => {
     <Box sx={{ width: "50vw", margin: "10vh auto" }}>
       <TextField
         id="standard-basic"
-        label="NAME"
+        label="Title"
         variant="standard"
         fullWidth
-        name="name"
+        name="title"
         onChange={handleInp}
-        value={product.name || ""}
+        value={product.title || ""}
         focused
       />
       <TextField
         id="standard-basic"
-        label="DESCRIPTION"
+        label="Description"
         variant="standard"
         fullWidth
         name="description"
@@ -61,7 +61,7 @@ const EditProduct = () => {
       />
       <TextField
         id="standard-basic"
-        label="PRICE"
+        label="Price"
         variant="standard"
         fullWidth
         name="price"
@@ -71,22 +71,22 @@ const EditProduct = () => {
       />
       <TextField
         id="standard-basic"
-        label="PICTURE"
+        label="Image"
         variant="standard"
         fullWidth
-        name="picture"
+        name="image"
         onChange={handleInp}
-        value={product.picture || ""}
+        value={product.image || ""}
         focused
       />
       <TextField
         id="standard-basic"
-        label="TYPE"
+        label="Category"
         variant="standard"
         fullWidth
-        name="type"
+        name="category"
         onChange={handleInp}
-        value={product.type || ""}
+        value={product.category || ""}
         focused
       />
       <Button

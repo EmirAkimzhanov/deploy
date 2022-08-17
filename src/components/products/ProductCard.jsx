@@ -8,25 +8,27 @@ import Typography from "@mui/material/Typography";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 export default function ProductCard({ item }) {
   const { deleteProduct } = useProducts();
-  // const { addProductToCart, checkProductInCart } = useCart();
   const { addProductToCart } = useCart();
+  const { user } = useAuth();
 
   const navigate = useNavigate();
+
 
   return (
     <Card sx={{ width: 300, m: 3 }}>
       <CardMedia
         component="img"
-        height="140"
-        image={item.picture}
+        height="200"
+        image={item.image}
         alt="Image"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {item.name}
+          {item.title}
         </Typography>
         <Typography gutterBottom variant="h6" component="div">
           $ {item.price}
@@ -36,13 +38,20 @@ export default function ProductCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => deleteProduct(item.id)}>
-          DELETE
-        </Button>
+        {
+          user.admin ? (
+          <>
+            <Button size="small" onClick={() => deleteProduct(item.id)}>
+              DELETE
+            </Button>
+            <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+              EDIT
+            </Button>
+          </>
+          ):
+          (<></>)
+        }
 
-        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-          EDIT
-        </Button>
         <Button size="small" onClick={() => addProductToCart(item)}>
           Cart
         </Button>

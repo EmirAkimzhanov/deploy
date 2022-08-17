@@ -8,7 +8,7 @@ export const useAuth = () => useContext(authContext);
 const API = "http://localhost:8000";
 
 const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({});
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -29,8 +29,7 @@ const AuthContextProvider = ({ children }) => {
       console.log(res);
       navigate("/login");
     } catch (error) {
-      console.log(error.data);
-      setError("Error: ", error.message);
+      setError(`${error.response.data}`);
     }
   };
 
@@ -44,17 +43,21 @@ const AuthContextProvider = ({ children }) => {
       let res = await axios.post(`${API}/login`, data, config);
       navigate("/");
       localStorage.setItem("token", JSON.stringify(res.data.accessToken));
-      localStorage.setItem("email", email);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+      setUser(res.data.user)
     } catch (error) {
-      console.log(error);
-      setError("Error: ", error);
+      setError(`${error.response.data}`);
     }
   };
 
   function logout() {
     localStorage.removeItem("token");
-    localStorage.removeItem("email");
-    setUser("");
+    localStorage.removeItem("user");
+    setUser({});
+  }
+
+  function admin() {
+    
   }
 
   return (
