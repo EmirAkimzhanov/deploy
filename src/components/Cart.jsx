@@ -14,8 +14,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 import { useNavigate } from "react-router-dom";
 
-
-
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -49,7 +47,6 @@ const rows = [
 ];
 
 export default function Cart() {
-
   const navigate = useNavigate();
 
   const { getCart, changeProductCount, deleteProductInCart, cart } = useCart();
@@ -136,7 +133,6 @@ export default function Cart() {
       <Box sx={{ m: 5 }}>
         <Typography variant="h6" component="div">
           Total price: {cart?.totalPrice}
-
           <Button
             onClick={() => {
               {
@@ -146,9 +142,7 @@ export default function Cart() {
           >
             BUY NOW
           </Button>
-
-          <Button onClick={cartCleaner}>BUY NOW</Button>
-
+          <Button onClick={cartCleaner}>Clean Cart</Button>
         </Typography>
       </Box>
     </TableContainer>
