@@ -20,13 +20,13 @@ export default function ProductCard({ item }) {
     <Card sx={{ width: 300, m: 3 }}>
       <CardMedia
         component="img"
-        height="140"
-        image={item.picture}
+        height="200"
+        image={item.image}
         alt="Image"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {item.name}
+          {item.title}
         </Typography>
         <Typography gutterBottom variant="h6" component="div">
           $ {item.price}
@@ -36,13 +36,20 @@ export default function ProductCard({ item }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={() => deleteProduct(item.id)}>
-          DELETE
-        </Button>
+        {
+          JSON.parse(localStorage.getItem("user")).admin ? (
+          <>
+            <Button size="small" onClick={() => deleteProduct(item.id)}>
+              DELETE
+            </Button>
+            <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
+              EDIT
+            </Button>
+          </>
+          ):
+          (<></>)
+        }
 
-        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)}>
-          EDIT
-        </Button>
         <Button size="small" onClick={() => addProductToCart(item)}>
           Cart
         </Button>

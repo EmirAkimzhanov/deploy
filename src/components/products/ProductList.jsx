@@ -43,7 +43,7 @@ const ProductList = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-around",
+          justifyContent: "flex-start",
           flexWrap: "wrap",
         }}
       >
