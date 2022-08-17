@@ -105,3 +105,18 @@ input:checked + .slider:before {
 .navlinks a:hover {
   color: lightgray !important;
 }
+
+.btn-catalog {
+  width: 10vw;
+  height: 3.5vw;
+  background-color: #2877ee !important;
+  color: white !important;
+}
+
+.inpSearch {
+  border: 3px solid blue !important;
+  width: 30vw;
+  outline: none;
+  font-size: 2.5vmin;
+  border-radius: 5px;
+}
