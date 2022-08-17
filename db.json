@@ -11,6 +11,14 @@
       "password": "$2a$10$xb3pMtQD6wMyNvXL5un4VuyQBoGOYuGumO/9MzNCs3r2jXE7ohT5e",
       "admin": false,
       "id": 3
+
+    },
+    {
+      "email": "emir.akimzhanov@gmail.com",
+      "password": "$2a$10$.4.emN8PNZTzSjocGoCDnOfPinHhs5gt916wwNTioNqHrRpET.lkK",
+      "admin": false,
+      "id": 4
+
     }
   ],
   "products": [
@@ -20,7 +28,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 1
+      "id": 1,
+      "name": "fdasfdsafdsa",
+      "picture": "fdsafdasf",
+      "type": "afdsafdsafas"
     },
     {
       "title": "Name",
@@ -37,7 +48,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 3
+      "id": 3,
+      "name": "fdsagdfnmgbcvbb",
+      "picture": "vcxzb nb",
+      "type": ",.nmm,nbvcnvbc"
     },
     {
       "title": "Name",
@@ -45,7 +59,10 @@
       "price": 123,
       "image": "ss",
       "category": "clothing",
-      "id": 4
+      "id": 4,
+      "picture": "hghmj,.k/,mbnvcx",
+      "type": "fghloiu,kjk",
+      "name": "fdsabzc "
     }
   ]
 }
