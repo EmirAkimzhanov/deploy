@@ -107,11 +107,20 @@ input:checked + .slider:before {
   color: lightgray !important;
 }
 
-.btn-catalog {
-  width: 10vw;
-  height: 3.5vw;
-  background-color: #2877ee !important;
-  color: white !important;
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  display: flex;
+  width: 15vmin;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list div {
+  width: 100% !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list div button {
+  width: 100% !important;
 }
 
 .inpSearch {
@@ -213,3 +222,4 @@ input:checked + .slider:before {
   font-size: 13px;
   margin-bottom: 0;
 }
+
