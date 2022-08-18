@@ -63,44 +63,83 @@ export default function Payment() {
 
   return (
     <Box>
-      <TableContainer
-        style={{ overflow: "hidden" }}
-        className="paper"
-        component={Paper}
-        sx={{ width: "15%" }}
-      >
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
-          <TableBody>
-            {cart?.products.map((row) => (
-              <StyledTableRow key={row.item.id}>
-                <StyledTableCell>
-                  {row.item.name} X {row.count}
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
       <Box
         sx={{
-          margin: "0 auto",
+          margin: "10vw auto",
           width: "500px",
           display: "flex",
           flexDirection: "column",
+          justifyContent: "space-evenly",
+          width: "45vw",
+          height: "25vw",
+          backgroundColor: "#2986cc",
+          borderRadius: "8px",
         }}
       >
+        <div
+          style={{
+            width: "100%",
+            height: "3vw",
+            backgroundColor: "#102124",
+            top: 0,
+          }}
+        ></div>
         <TextField
-          id="outlined-basic"
-          placeholder="cart number"
-          variant="outlined"
-        />
-        <TextField id="outlined-basic" placeholder="cvv" variant="outlined" />
-        <TextField id="outlined-basic" placeholder="YY/MM" variant="outlined" />
+          sx={{
+            backgroundColor: "#9fc5e8",
+            width: "70%",
+            margin: "0 auto",
+            borderRadius: "8px",
+          }}
+          placeholder="card number"
+        ></TextField>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <TextField
+            sx={{
+              backgroundColor: "#9fc5e8",
+              width: "40%",
+
+              borderRadius: "8px",
+            }}
+            placeholder="cvv"
+          ></TextField>
+          <TextField
+            sx={{
+              backgroundColor: "#9fc5e8",
+              width: "13.5%",
+              marginLeft: "20px",
+              borderRadius: "8px",
+            }}
+            placeholder="MM"
+          ></TextField>
+          <TextField
+            sx={{
+              backgroundColor: "#9fc5e8",
+              width: "13.5%",
+
+              borderRadius: "8px",
+            }}
+            placeholder="YY"
+          ></TextField>
+        </Box>
         <TextField
-          id="outlined-basic"
-          placeholder="something"
-          variant="outlined"
-        />
+          sx={{
+            backgroundColor: "#9fc5e8",
+            width: "70%",
+            margin: "0 auto",
+            borderRadius: "8px",
+          }}
+          placeholder="card holder"
+        ></TextField>
+
+        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+          <Typography
+            sx={{ color: "white", marginLeft: "10px", fontSize: "3vmin" }}
+          >
+            Paying:${cart.totalPrice}
+          </Typography>
+          <Button sx={{ color: "white", fontSize: "2.5vmin" }}>Submit</Button>
+        </Box>
       </Box>
     </Box>
   );

@@ -108,16 +108,75 @@ input:checked + .slider:before {
   color: lightgray !important;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list {
-  display: flex;
-  width: 15vmin;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn-catalog {
+  width: 10vw;
+  height: 3.5vw;
+  background-color: #2877ee !important;
+  color: white !important;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list div {
-  width: 100% !important;
+.inpSearch {
+  border: 3px solid blue !important;
+  width: 10vw !important;
+  outline: none;
+  font-size: 2.5vmin;
+  border-radius: 5px;
+}
+.paper {
+  border-top: none !important;
+}
+.footer-dark {
+  padding: 50px 0;
+  color: #f0f9ff;
+  background-color: #252734;
+  bottom: 0 !important;
+}
+
+.footer-dark h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.footer-dark ul {
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.footer-dark ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .footer-dark .item:not(.social) {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+  .footer-dark .item.text {
+    margin-bottom: 0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity: 0.6;
+  margin-bottom: 0;
 }
 
 .css-6hp17o-MuiList-root-MuiMenu-list div button {
@@ -227,12 +286,51 @@ input:checked + .slider:before {
   margin-bottom: 0;
 }
 
+.credit-card-box .panel-title {
+  display: inline;
+  font-weight: bold;
+}
+.credit-card-box .form-control.error {
+  border-color: red;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+  display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+  display: table;
+}
+.credit-card-box .display-tr {
+  display: table-row;
+}
+.credit-card-box .display-td {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+  min-width: 180px;
+}
 .navbar-burger {
   display: none !important;
 }
 
 .burger {
-  
 }
 
 @media screen and (max-width: 700px) {
