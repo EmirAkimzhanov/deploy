@@ -6,25 +6,35 @@ import {
   Radio,
   RadioGroup,
   Button,
+  TextField,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useProducts } from "../contexts/ProductContextProvider";
-import Popper from "@mui/material/Popper";
-import Fade from "@mui/material/Fade";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import SearchIcon from "@mui/icons-material/Search";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
+import { createTheme } from "@mui/material/styles";
+
+const CssTextField = styled(TextField, {
+  shouldForwardProp: (props) => props !== "focusColor"
+})((p) => ({
+  "& label.Mui-focused": {
+    color: p.focusColor
+  },
+  "& .MuiInput-underline:after": {
+    borderBottomColor: p.focusColor
+  },
+  "& .MuiFilledInput-underline:after": {
+    borderBottomColor: p.focusColor
+  },
+  "& .MuiOutlinedInput-root": {
+    "&.Mui-focused fieldset": {
+      borderColor: p.focusColor
+    }
+  }
+}));
 
 const Category = () => {
   const { getProducts, fetchByParams } = useProducts();
@@ -66,9 +76,20 @@ const Category = () => {
     setOpen((previousOpen) => !previousOpen);
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#252734',
+      },
+      secondary: {
+        main: '#3C3F52',
+      }
+    }
+  })
+
   const canBeOpen = open && Boolean(anchorEl);
   const id = canBeOpen ? "transition-popper" : undefined;
-  const settings = ["All", "Clothes", "Sport", "Cars"];
+  const settings = ["All", "Clothes", "Sport", "Office"];
 
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
@@ -114,26 +135,28 @@ const Category = () => {
   return (
     <div>
       <Box
-        sx={{ flexGrow: 0, p: 5, display: "flex", justifyContent: "center" }}
+        sx={{ flexGrow: 0, p: 3, display: "flex", justifyContent: "flex-start", position: 'relative' }}
       >
         <Tooltip title="Open settings">
           <Button
-            className="btn-catalog"
+            theme={theme}
+            variant="contained"
             onClick={handleOpenUserMenu}
-            sx={{ p: 0 }}
+            sx={{ mr: 3, width: '15vmin' }}
           >
-            <span>catalog</span>
+            Catalog
           </Button>
         </Tooltip>
 
-        <input
-          className="inpSearch"
-          placeholder="🔎Search..."
+        <CssTextField
+          focusColor="#252734"
+          label="Search..."
+          variant="outlined"
           onChange={(e) => setSearch(e.target.value)}
-        ></input>
+        />
 
         <Menu
-          sx={{ mt: "45px" }}
+          sx={{mt: '3.7em'}}
           id="menu-appbar"
           anchorEl={anchorElUser}
           anchorOrigin={{
@@ -152,12 +175,12 @@ const Category = () => {
             <Box
               key={setting}
               onClick={handleCloseUserMenu}
-              sx={{ width: "10vw" }}
             >
               <Button
+                theme={theme}
                 value={setting.toLowerCase()}
                 onClick={(e) => fetchByParams("category", e.target.value)}
-                textAlign="center"
+                sx={{textAlign:'center'}}
               >
                 {setting}
               </Button>
