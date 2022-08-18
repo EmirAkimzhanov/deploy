@@ -26,7 +26,6 @@ const AuthContextProvider = ({ children }) => {
 
     try {
       const res = await axios.post(`${API}/register`, data, config);
-      console.log(res);
       navigate("/login");
     } catch (error) {
       setError(`${error.response.data}`);
@@ -62,7 +61,7 @@ const AuthContextProvider = ({ children }) => {
 
   return (
     <authContext.Provider
-      value={{ register, login, logout, error, user }}
+      value={{ register, login, logout, error, user, setUser: setUser }}
     >
       {children}
     </authContext.Provider>

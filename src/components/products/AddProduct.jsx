@@ -1,7 +1,18 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, createTheme, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#252734',
+    },
+    secondary: {
+      main: '#3C3F52',
+    }
+  }
+})
 
 const AddProduct = () => {
   const { addProduct } = useProducts();
@@ -35,6 +46,7 @@ const AddProduct = () => {
   return (
     <Box sx={{ width: "50vw", margin: "10vh auto" }}>
       <TextField
+        sx={{my: 2}}
         id="standard-basic"
         label="Title"
         variant="standard"
@@ -43,6 +55,7 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <TextField
+        sx={{my: 2}}
         id="standard-basic"
         label="Description"
         variant="standard"
@@ -51,6 +64,7 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <TextField
+        sx={{my: 2}}
         id="standard-basic"
         label="Price"
         type="number"
@@ -60,6 +74,7 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <TextField
+        sx={{my: 2}}
         id="standard-basic"
         label="Image"
         variant="standard"
@@ -68,6 +83,7 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <TextField
+        sx={{my: 2}}
         id="standard-basic"
         label="Category"
         variant="standard"
@@ -76,6 +92,8 @@ const AddProduct = () => {
         onChange={handleInp}
       />
       <Button
+      sx={{my: 2}}
+      theme={theme}
         variant="outlined"
         fullWidth
         onClick={() => {

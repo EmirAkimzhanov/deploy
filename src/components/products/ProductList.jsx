@@ -10,7 +10,7 @@ const ProductList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [page, setPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
   const count = Math.ceil(products.length / itemsPerPage);
 
   useEffect(() => {

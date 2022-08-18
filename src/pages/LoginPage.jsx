@@ -12,6 +12,18 @@ import Typography from "@mui/material/Typography";
 
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContextProvider";
+import { createTheme } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#252734',
+    },
+    secondary: {
+      main: '#3C3F52',
+    }
+  }
+})
 
 function Copyright(props) {
   return (
@@ -39,7 +51,6 @@ export default function LoginPage() {
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  console.log(email, password);
 
   function handleLogin(email, password) {
     login(email, password);
@@ -59,7 +70,7 @@ export default function LoginPage() {
                 mx: 'auto'
               }}
             >
-              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+              <Avatar sx={{ m: 1, bgcolor: "#252734" }}>
                 <LockOutlinedIcon />
               </Avatar>
               <Typography component="h1" variant="h5">
@@ -101,6 +112,7 @@ export default function LoginPage() {
                   label="Remember me"
                 />
                 <Button
+                theme={theme}
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}

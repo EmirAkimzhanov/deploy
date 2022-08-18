@@ -1,8 +1,9 @@
 import React from "react";
-import icon from "../assets/icons/instagram (1).png";
-import icon2 from "../assets/icons/snapchat.png";
-import icon3 from "../assets/icons/twitter (1).png";
-import icon4 from "../assets/icons/youtube.png";
+import icon from "../assets/icons/icons8-facebook.svg";
+import icon2 from "../assets/icons/icons8-twitter.svg";
+import icon3 from "../assets/icons/icons8-tiktok.svg";
+import icon4 from "../assets/icons/icons8-instagram.svg";
+import { Box } from "@mui/material";
 
 const Footer = () => {
   return (
@@ -39,10 +40,10 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-md-6 item text">
-              <h3 style={{ textAlign: "center" }}>Company Name</h3>
+              <h3 style={{ textAlign: "center" }}>ES</h3>
               <p style={{ textAlign: "center" }}>
-                Praesent sed lobortis mi. Suspendisse vel placerat ligula.
-                Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam
+                Hello dear guest this is our beautiful website, and i dont know what to write here
+                So i will put some default text. Ut vehicula. Etiam
                 quis tristique lectus. Aliquam in arcu eget velit pulvinar
                 dictum vel in justo.
               </p>
@@ -66,7 +67,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <p className="copyright">Company Name © 2018</p>
+          <p className="copyright">ES © 2022</p>
         </div>
       </footer>
     </div>

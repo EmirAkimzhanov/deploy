@@ -18,6 +18,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function NavBar() {
   const theme = createTheme({
@@ -35,14 +36,20 @@ export default function NavBar() {
 
   const linkStyle = {
     textDecoration: "none",
-    fontSize: '1em',
+    fontSize: '1.7vmin',
     color: "inherit",
     cursor: "pointer",
     padding: "1.5em",
     transition: "100ms",
   };
 
-  const { logout, user } = useAuth();
+  const { logout, user, setUser } = useAuth();
+
+  useEffect(()=>{
+    if (JSON.parse(localStorage.getItem('user'))) {
+      setUser(JSON.parse(localStorage.user));
+    }
+  },[])
 
   const [state, setState] = React.useState({
     top: false,
@@ -195,6 +202,9 @@ export default function NavBar() {
             <Link to="/about" style={linkStyle}>
               About us
             </Link>
+            <Link to="/cart" style={linkStyle}>
+              Cart
+            </Link>
             {
               user.admin ? (
               <>
@@ -210,7 +220,7 @@ export default function NavBar() {
             {localStorage.getItem("user") ? (
               <>
                 <Link to="/" style={linkStyle}>
-                  {JSON.parse(localStorage.getItem("user")).email}
+                  {JSON.parse(localStorage.getItem("user")).email.split('@')[0]}
                 </Link>
                 <Link to="/" style={linkStyle} onClick={logout}>
                   Logout

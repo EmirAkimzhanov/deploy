@@ -32,7 +32,16 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#252734',
+    },
+    secondary: {
+      main: '#3C3F52',
+    }
+  }
+})
 
 export default function RegistrationPage() {
 
@@ -40,8 +49,6 @@ export default function RegistrationPage() {
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  console.log(email, password);
-  console.log(error);
 
   function handleRegister(email, password) {
     register(email, password);
@@ -58,7 +65,7 @@ export default function RegistrationPage() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1, bgcolor: "#252734" }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -101,6 +108,7 @@ export default function RegistrationPage() {
               />
               <Button
                 // type="submit"
+                theme={theme}
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}

@@ -179,6 +179,10 @@ input:checked + .slider:before {
   margin-bottom: 0;
 }
 
+.css-6hp17o-MuiList-root-MuiMenu-list div {
+  width: 100% !important;
+}
+
 .css-6hp17o-MuiList-root-MuiMenu-list div button {
   width: 100% !important;
 }
@@ -267,8 +271,6 @@ input:checked + .slider:before {
   line-height: 36px;
   display: inline-block;
   text-align: center;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
   margin: 0 8px;
   color: #fff;
   opacity: 0.75;
@@ -328,9 +330,6 @@ input:checked + .slider:before {
 }
 .navbar-burger {
   display: none !important;
-}
-
-.burger {
 }
 
 @media screen and (max-width: 700px) {
