@@ -21,13 +21,13 @@ export default function HomePage() {
       <Paper
         elevation={0}
         sx={{
-          width: "90%",
+          width: "100%",
           margin: "0 auto",
-          marginTop: "2%",
+          borderTop: "none",
         }}
       >
         <MDBCarousel interval={2000} showIndicators dark fade>
-          <MDBCarouselInner style={{ borderRadius: "5px" }}>
+          <MDBCarouselInner>
             <MDBCarouselItem className="active">
               <MDBCarouselElement src={image} alt="..." />
               <MDBCarouselCaption></MDBCarouselCaption>
