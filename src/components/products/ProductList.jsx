@@ -38,6 +38,7 @@ const ProductList = () => {
         display: "flex",
         mt: 5,
         flexDirection: "column",
+        minHeight: '70vh',
       }}
     >
       <Box
@@ -53,15 +54,21 @@ const ProductList = () => {
           <h3>Loading...</h3>
         )}
       </Box>
-
-      <Pagination
-        variant="outlined"
-        shape="rounded"
-        sx={{ m: "0 auto" }}
-        count={count}
-        page={page}
-        onChange={handlePage}
-      />
+      {
+        products.length > 0 ? (
+          <Pagination
+            variant="outlined"
+            shape="rounded"
+            sx={{ m: "0 auto", my: 4 }}
+            count={count}
+            page={page}
+            onChange={handlePage}
+          />
+        ) :
+        (
+          <></>
+        )
+      }
     </Box>
   );
 };
