@@ -7,6 +7,11 @@ import {
   MDBCarouselCaption,
 } from "mdb-react-ui-kit";
 import AOS from "aos";
+import image from "../assets/mug_mockup.jpg";
+import image2 from "../assets/t_shirt_and_tote_bag_mockup.jpg";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Button from "@mui/material/Button";
 
 import { Box, Card, CardMedia, Paper, Typography } from "@mui/material";
 AOS.init();
@@ -16,30 +21,24 @@ export default function HomePage() {
       <Paper
         elevation={0}
         sx={{
-          width: "90%",
+          width: "100%",
           margin: "0 auto",
-          marginTop: "2%",
         }}
+        className="paper"
       >
         <MDBCarousel interval={2000} showIndicators dark fade>
-          <MDBCarouselInner style={{ borderRadius: "5px" }}>
+          <MDBCarouselInner>
             <MDBCarouselItem className="active">
-              <MDBCarouselElement
-                src="https://mdbootstrap.com/img//Slides/img%20(19).webp"
-                alt="..."
-              />
+              <MDBCarouselElement src={image} alt="..." />
               <MDBCarouselCaption></MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem>
-              <MDBCarouselElement alt="..." />
+              <MDBCarouselElement src={image2} alt="..." />
               <MDBCarouselCaption></MDBCarouselCaption>
             </MDBCarouselItem>
 
             <MDBCarouselItem>
-              <MDBCarouselElement
-                src="https://mdbootstrap.com/img/Photos//img%20(40).webp"
-                alt="..."
-              />
+              <MDBCarouselElement src={image} alt="..." />
               <MDBCarouselCaption></MDBCarouselCaption>
             </MDBCarouselItem>
           </MDBCarouselInner>
@@ -47,105 +46,74 @@ export default function HomePage() {
       </Paper>
       <Box sx={{ padding: "5%" }}>
         <h1>Popular</h1>
-        <Box>
-          <Card
-            data-aos="zoom-out"
-            data-aos-duration="1000"
-            sx={{
-              width: "20vw",
-              height: "25vw",
-              backgroundColor: "#252734",
-              borderRadius: "10px",
-              borderRadius: "0",
-            }}
-          >
+        <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              height="140"
-              image="https://mdbootstrap.com/img/Photos/Slides/img%20(40).webp"
               alt="green iguana"
+              height="140"
+              image={image}
             />
-            <Typography
-              sx={{ padding: "5%" }}
-              gutterBottom
-              variant="h5"
-              component="div"
-            >
-              name
-            </Typography>
-            <Typography
-              sx={{ padding: "5%" }}
-              variant="body2"
-              color="text.secondary"
-            >
-              descr
-            </Typography>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Mugs
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Somthing about mug
+              </Typography>
+            </CardContent>
+            <CardActions></CardActions>
           </Card>
-          <Card
-            data-aos="zoom-out"
-            data-aos-duration="1000"
-            sx={{
-              width: "20vw",
-              height: "25vw",
-              backgroundColor: "#252734",
-              borderRadius: "10px",
-              borderRadius: "0",
-            }}
-          >
+          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              height="140"
-              image="https://mdbootstrap.com/img/Photos/Slides/img%20(40).webp"
               alt="green iguana"
+              height="140"
+              image={image}
             />
-            <Typography
-              sx={{ padding: "5%" }}
-              gutterBottom
-              variant="h5"
-              component="div"
-            >
-              name
-            </Typography>
-            <Typography
-              sx={{ padding: "5%" }}
-              variant="body2"
-              color="text.secondary"
-            >
-              descr
-            </Typography>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Mugs
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Somthing about mug
+              </Typography>
+            </CardContent>
+            <CardActions></CardActions>
           </Card>
-          <Card
-            data-aos="zoom-out"
-            data-aos-duration="1000"
-            sx={{
-              width: "20vw",
-              height: "25vw",
-              backgroundColor: "#252734",
-              borderRadius: "10px",
-              borderRadius: "0",
-            }}
-          >
+          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
-              height="140"
-              image="https://mdbootstrap.com/img/Photos/Slides/img%20(40).webp"
               alt="green iguana"
+              height="140"
+              image={image}
             />
-            <Typography
-              sx={{ padding: "5%" }}
-              gutterBottom
-              variant="h5"
-              component="div"
-            >
-              name
-            </Typography>
-            <Typography
-              sx={{ padding: "5%" }}
-              variant="body2"
-              color="text.secondary"
-            >
-              descr
-            </Typography>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Mugs
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Somthing about mug
+              </Typography>
+            </CardContent>
+            <CardActions></CardActions>
+          </Card>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              height="140"
+              image={image}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Mugs
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Somthing about mug
+              </Typography>
+            </CardContent>
+            <CardActions></CardActions>
           </Card>
         </Box>
       </Box>
