@@ -70,8 +70,8 @@ export default function Payment() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-evenly",
-          width: "40vw",
-          height: "20vw",
+          width: "45vw",
+          height: "25vw",
           backgroundColor: "#2986cc",
           borderRadius: "8px",
         }}
@@ -101,7 +101,7 @@ export default function Payment() {
 
               borderRadius: "8px",
             }}
-            placeholder="card holder"
+            placeholder="cvv"
           ></TextField>
           <TextField
             sx={{
@@ -122,6 +122,16 @@ export default function Payment() {
             placeholder="YY"
           ></TextField>
         </Box>
+        <TextField
+          sx={{
+            backgroundColor: "#9fc5e8",
+            width: "70%",
+            margin: "0 auto",
+            borderRadius: "8px",
+          }}
+          placeholder="card holder"
+        ></TextField>
+
         <Box sx={{ display: "flex", justifyContent: "space-around" }}>
           <Typography
             sx={{ color: "white", marginLeft: "10px", fontSize: "3vmin" }}
