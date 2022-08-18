@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif !important;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -134,6 +135,9 @@ input:checked + .slider:before {
   border-top: none !important;
 }
 .footer-dark {
+  width: 100%;
+  /* position: absolute; */
+  bottom: 0;
   padding: 50px 0;
   color: #f0f9ff;
   background-color: #252734;
@@ -223,3 +227,16 @@ input:checked + .slider:before {
   margin-bottom: 0;
 }
 
+.navbar-burger {
+  display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    display: none !important;
+  }
+
+  .navbar-burger {
+    display: flex !important;
+  }
+}

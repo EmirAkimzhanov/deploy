@@ -1,3 +1,4 @@
+import { Box } from "@mui/system";
 import NavBar from "./components/NavBar";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import CartContextProvider from "./contexts/CartContextProvider";
@@ -11,9 +12,11 @@ function App() {
       <AuthContextProvider>
         <ProductContextProvider>
           <CartContextProvider>
-            <NavBar />
-            <MainRoutes />
-            <Footer />
+            <Box sx={{minHeight: '100vh', position: 'relative'}}>
+              <NavBar />
+              <MainRoutes />
+              <Footer />
+            </Box>
           </CartContextProvider>
         </ProductContextProvider>
       </AuthContextProvider>
