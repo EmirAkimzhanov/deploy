@@ -9,13 +9,17 @@ import {
 import AOS from "aos";
 import image from "../assets/mug_mockup.jpg";
 import image2 from "../assets/t_shirt_and_tote_bag_mockup.jpg";
+import image3 from "../assets/welcome.jpg";
+import umbrella from "../assets/umbrella.jpg";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 
 import { Box, Card, CardMedia, Paper, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 AOS.init();
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <Box>
       <Paper
@@ -26,10 +30,10 @@ export default function HomePage() {
         }}
         className="paper"
       >
-        <MDBCarousel interval={2000} showIndicators dark fade>
+        <MDBCarousel interval={3000} showIndicators dark fade>
           <MDBCarouselInner>
             <MDBCarouselItem className="active">
-              <MDBCarouselElement src={image} alt="..." />
+              <MDBCarouselElement src={image3} alt="..." />
               <MDBCarouselCaption></MDBCarouselCaption>
             </MDBCarouselItem>
             <MDBCarouselItem>
@@ -45,26 +49,26 @@ export default function HomePage() {
         </MDBCarousel>
       </Paper>
       <Box sx={{ padding: "5%" }}>
-        <h1>Popular</h1>
-        <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
-          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
+        <Typography variant="h4" sx={{mb: 5}}>Popular</Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345, cursor: 'pointer', my: 3 }} onClick={()=>navigate('/products')}>
             <CardMedia
               component="img"
               alt="green iguana"
               height="140"
-              image={image}
+              image={umbrella}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Mugs
+                Umbrella
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Somthing about mug
+                Even umbrella
               </Typography>
             </CardContent>
             <CardActions></CardActions>
           </Card>
-          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345, cursor: 'pointer', my: 3 }} onClick={()=>navigate('/products')}>
             <CardMedia
               component="img"
               alt="green iguana"
@@ -76,29 +80,29 @@ export default function HomePage() {
                 Mugs
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Somthing about mug
+                Best mugs ever
               </Typography>
             </CardContent>
             <CardActions></CardActions>
           </Card>
-          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345, cursor: 'pointer', my: 3 }} onClick={()=>navigate('/products')}>
             <CardMedia
               component="img"
               alt="green iguana"
               height="140"
-              image={image}
+              image={image2}
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Mugs
+                Clothes
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Somthing about mug
+                Best clothes you ever wear
               </Typography>
             </CardContent>
             <CardActions></CardActions>
           </Card>
-          <Card data-aos="flip-left" sx={{ maxWidth: 345 }}>
+          <Card data-aos="flip-left" sx={{ maxWidth: 345, cursor: 'pointer', my: 3 }} onClick={()=>navigate('/products')}>
             <CardMedia
               component="img"
               alt="green iguana"
@@ -107,10 +111,10 @@ export default function HomePage() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Mugs
+                Office
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Somthing about mug
+                Best office stuff
               </Typography>
             </CardContent>
             <CardActions></CardActions>
