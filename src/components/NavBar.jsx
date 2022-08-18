@@ -6,12 +6,18 @@ import { useAuth } from "../contexts/AuthContextProvider";
 import { Link } from "react-router-dom";
 import { createTheme, IconButton, List, ListItem, ListItemButton, ListItemIcon } from "@mui/material";
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
 import logo from "../assets/icons/logo_fafafa.svg";
+import Inventory2Icon from '@mui/icons-material/Inventory2';
+import InfoIcon from '@mui/icons-material/Info';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import { useNavigate } from "react-router-dom";
 
 export default function NavBar() {
   const theme = createTheme({
@@ -24,6 +30,8 @@ export default function NavBar() {
       },
     },
   });
+
+  const navigate = useNavigate();
 
   const linkStyle = {
     textDecoration: "none",
@@ -63,29 +71,87 @@ export default function NavBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+        <ListItem disablePadding>
+          <ListItemButton onClick={()=>navigate('/')}>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={()=>navigate('/products')}>
+            <ListItemIcon>
+              <Inventory2Icon />
+            </ListItemIcon>
+            <ListItemText primary="Products" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={()=>navigate('/about')}>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="About Us" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={()=>navigate('/cart')}>
+            <ListItemIcon>
+              <ShoppingCartIcon />
+            </ListItemIcon>
+            <ListItemText primary="Cart" />
+          </ListItemButton>
+        </ListItem>
+        {
+          user.admin ? (    
+          <ListItem disablePadding>
+            <ListItemButton onClick={()=>navigate('/admin')}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <AdminPanelSettingsIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary="Admin" />
             </ListItemButton>
           </ListItem>
-        ))}
+          ) : null
+        }
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+        {
+          user.email ? (
+          <ListItem disablePadding>
+            <ListItemButton onClick={()=>{
+              logout()
+              navigate('/')
+              }}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <LogoutIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary="Logout" />
             </ListItemButton>
           </ListItem>
-        ))}
+          ) : (
+            <>
+              <ListItem disablePadding>
+                <ListItemButton onClick={()=>navigate('/login')}>
+                  <ListItemIcon>
+                    <LoginIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Login" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton onClick={()=>navigate('/register')}>
+                  <ListItemIcon>
+                    <HowToRegIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Register" />
+                </ListItemButton>
+              </ListItem>
+            </>
+          )
+        }
       </List>
     </Box>
   );
