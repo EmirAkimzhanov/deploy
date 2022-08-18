@@ -23,8 +23,8 @@ export default function HomePage() {
         sx={{
           width: "100%",
           margin: "0 auto",
-          borderTop: "none",
         }}
+        className="paper"
       >
         <MDBCarousel interval={2000} showIndicators dark fade>
           <MDBCarouselInner>
