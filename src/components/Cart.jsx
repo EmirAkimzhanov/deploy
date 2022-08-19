@@ -88,7 +88,7 @@ export default function Cart() {
           {cart?.products.map((row) => (
             <StyledTableRow key={row.item.id}>
               <StyledTableCell component="th" scope="row">
-                <img src={row.item.picture} alt="" width="70" />
+                <img src={row.item.image} alt="" width="70" />
               </StyledTableCell>
               <StyledTableCell component="th" scope="row">
                 {row.item.name}
