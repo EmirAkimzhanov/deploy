@@ -36,7 +36,7 @@ export default function NavBar() {
 
   const linkStyle = {
     textDecoration: "none",
-    fontSize: '1.7vmin',
+    fontSize: '1.8vmin',
     color: "inherit",
     cursor: "pointer",
     padding: "1.5em",

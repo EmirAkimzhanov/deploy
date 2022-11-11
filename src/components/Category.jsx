@@ -137,7 +137,7 @@ const Category = () => {
             theme={theme}
             variant="contained"
             onClick={handleOpenUserMenu}
-            sx={{ mr: 3, width: '15vmin' }}
+            sx={{ mr: 3, width: '15vmin', fontSize: '0.7rem' }}
           >
             Catalog
           </Button>

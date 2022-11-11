@@ -29,14 +29,6 @@
       "id": 1
     },
     {
-      "title": "Tshirt",
-      "description": "Simple nice tshirt",
-      "price": 30,
-      "image": "https://img.joomcdn.net/a24f70d27ca2552e92aa45c9005827c82b915156_original.jpeg",
-      "category": "clothes",
-      "id": 2
-    },
-    {
       "title": "Tshirt print",
       "description": "Tshirt with stylish print",
       "price": 40,
