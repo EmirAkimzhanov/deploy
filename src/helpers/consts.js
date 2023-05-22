@@ -8,4 +8,4 @@ export const CART = {
   GET_CART_LENGTH: "GET_CART_LENGTH",
 };
 
-export const JSON_API_PRODUCTS = "https://my-db-coral.vercel.app/";
+export const JSON_API_PRODUCTS = "https://my-db-coral.vercel.app/products";
